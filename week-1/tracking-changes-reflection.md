@@ -6,7 +6,7 @@ You can always go back and see what you did previously.  If you have a bug, you 
 - What are the best practices for commit messages? Using the imperative (like "change this" instead of "changed" or "changes"); being specific and clear.  It's important to keep in mind that others might read it and they will need to understand what happens in the commit.
 - What does the HEAD^ argument mean?  This refers to the last commit
 - What are the 3 stages of a git change and how do you move a file from one stage to the other?  The three stages are as follows:
-track changes, make changes, and to pull changes.
+modified, staged (added), and committed 
 moving a file from one stage to the other:
 git add FILENAME
 git commit -m "ENTER A COMMIT MESSAGE HERE"
