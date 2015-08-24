@@ -1,0 +1,29 @@
+## 4. Open Source and Repo Setup Reflection
+
+- Explain how to create a repository on GitHub and clone the repository to your local computer to a non-technical person.
+- Describe what open source means.
+- What do you think about Open Source? Does it make you nervous or protective? Does it feel like utopia?
+- Assess the importance of using licenses.
+- What concepts were solidified in the challenge? Did you have any "aha" moments? What did you struggle with?
+- Did you find any resources on your own that helped you better understand a topic? If so, please list it.
+
+How to creat a repository on GitHub:
+1. go to your GitHub account profile page
+2. on the upper right, there is a '+'.  Click on this and then on "new repository"
+3. Enter a name for your new repository
+4. Choose public account
+5. Choose MIT License
+6. Click on "Create Repository"
+Now to Clone the repository:
+1. Copy the url for your GitHub repository 
+2.  Go to your terminal and go to the file where you want to keep your local repository.
+3. type git clone <name of repository>
+
+"Open source" is free software that allows anyone to see how it was made and to modify as they choose.
+I think the spirit of open source is pretty incredible.  It's surprising that so many people have volunteered to offer it and modify it for free.  It's seems outside of our capitalistic society.  I do wonder how it may get abused or has been abused.  Although it's outside the licensure agreement, I wonder if people sometimes steal software, modify it, and then sell it and call it their own.
+
+The importance of using licenses is to specify how what is written can be used.  Usually for open source software, any part can be reproduced as long as it maintains the same license and permissions for use.
+
+In the challenge, I got a better idea of the process of cloning, commiting and pushing.  I still am sometimes unclear where I need to be in my files when I create or open branches or when I push them.  I didn't necessarily have an aha moment, but I was extremely satisfied that when bash told me the package for using the command "push" was not installed that i was able to install it myself.
+
+I did not find any resources on my own.  What helped me better understand it was to make a diagram of the steps, since I am way better at understanding something visually than through a bunch of text and written instructions.
