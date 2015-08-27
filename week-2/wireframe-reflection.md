@@ -1,6 +1,6 @@
 ![Kim's home index wireframe](week-2/wireframe-index.jpg)
 
-![Kim's blog index wireframe](week2/wireframe-blog-index.png)
+![Kim's blog index wireframe](week-2/wireframe-blog-index.png)
 
 What is a wireframe?
 A wireframe is a simple skeleton to show a general layout of a web page. It's like making a visual outline without all the detail.  Usually it is in black and white.
