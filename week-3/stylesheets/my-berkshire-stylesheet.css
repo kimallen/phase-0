@@ -15,7 +15,7 @@ header span {
     font-size: 30px; 
 }
 
-.address {
+#address {
     font-size:15px;
 }
 
@@ -58,4 +58,22 @@ footer {
 footer p a {
     font-size:15px;
 }
+/*What is important to know when linking an external file (like a stylesheet) to an HTML file?
+It's important to know how to write a relative path.  We were not actually able to link the two when they were in different directories, 
+although we checked several ways and spent lots of time.  We ended up putting them in the same directory so that we could move forward.  
+I'd love to know what we were doing wrong.
 
+What tricks did you use to help you with positioning? How hard was it to get the site as you wanted it?
+Some parts were easy, some were really challenging.  It got complicated when the header with title and address had several different fonts. 
+Some tricks we used were text-align: center and making a visible border to create the horizontal lines; we also turned the links into a table in order to put it into two columns.  
+It was hard to get the spacing between the different lines and have yet to acheive that.
+
+What CSS did you use to modify the element style (like size, color, etc.)
+We used font-size, borders, margin sizing, color, and :link and :visited as psuedo-selectors
+
+Did you modify the HTML to include classes or ids? If so, which did you chose and why? If you didn't, how would you know which one to add to your HTML?
+I used an id to identify the address in the header so that I could change the font.  I chose this over class because I was only using it once in the document.
+
+When you compared your site to the actual code base, which do you think had cleaner code that followed best practices and why?
+I think we had cleaner code because we did all of our styling in css; whereas, this website primarily put its styling in the html document.
+*/
