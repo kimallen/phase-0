@@ -1,0 +1,50 @@
+header {
+    background-color: tomato;
+    padding: 10px;
+}
+
+
+/*section {
+    background-color:blue;
+    
+}
+
+article {
+    background-color:green;
+    
+}*/
+.column-1 {
+    background-color:orange;
+    display:inline:block;
+    float:left;
+    width:50%;
+    box-sizing:border-box;
+    padding-left:20px;
+    
+}
+.column-2 {
+    background-color:purple;
+    display:inline:block;
+    float:right;
+    width:50%;
+    padding-bottom: 20px;
+    padding-left:20px;
+    box-sizing:border-box;
+    
+}
+.column-1 a:visited {
+    color:yellow;
+}
+
+.column-1 a:hover {
+    color:green;
+}
+/*details {
+    background-color:yellow;
+}*/
+
+footer {
+    background-color:tomato;
+    clear:both;
+    padding: 15px;
+}
