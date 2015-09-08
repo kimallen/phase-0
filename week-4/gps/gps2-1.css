@@ -1,20 +1,23 @@
+body {
+    background-color:orange;
+}
 header {
     background-color: tomato;
     padding: 10px;
 }
 
-
-/*section {
-    background-color:blue;
-    
+h1 img {
+    height:50px;
+    width:50px;
+    padding-right:20px;
+}
+h1 {
+    font-family:cursive;
+    font-size:40px;
 }
 
-article {
-    background-color:green;
-    
-}*/
 .column-1 {
-    background-color:orange;
+    /*background-color:orange;*/
     display:inline:block;
     float:left;
     width:50%;
@@ -23,13 +26,14 @@ article {
     
 }
 .column-2 {
-    background-color:purple;
+    /*background-color:orange;*/
     display:inline:block;
     float:right;
     width:50%;
-    padding-bottom: 20px;
+    padding-bottom: 38px;
     padding-left:20px;
     box-sizing:border-box;
+   
     
 }
 .column-1 a:visited {
@@ -39,9 +43,6 @@ article {
 .column-1 a:hover {
     color:green;
 }
-/*details {
-    background-color:yellow;
-}*/
 
 footer {
     background-color:tomato;
