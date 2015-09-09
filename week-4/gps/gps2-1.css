@@ -12,8 +12,13 @@ h1 img {
     padding-right:20px;
 }
 h1 {
+    text-align:center;
     font-family:cursive;
     font-size:40px;
+}
+
+h2 {
++    text-decoration: underline;
 }
 
 .column-1 {
