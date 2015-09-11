@@ -3,6 +3,7 @@
 
 # Your Solution Below
 
+#OUR ORIGINAL ATTEMPT:
 # def valid_triangle?(a, b, c)
 #   if a==b && b==c
 #     puts "True, an equalateral triangle!"
@@ -18,11 +19,16 @@
 #     puts "Sorry, this is not a triangle."
 #    end
 # end
+
+
+
+# A solution based on help from office hours.
 # def valid_triangle?(a,b,c)
 #   return false if [a, b, c].any? { |e| e <= 0 }
 #   (a+b > c) && (a+c > b) && (b+c > a)
 # end
 
+#My post-office hrs personal solution.  Note that it does not cover numbers entered less than 0, but passes the spec.
 def valid_triangle?(a,b,c)
   if a*b*c == 0
     false
