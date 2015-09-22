@@ -1,8 +1,8 @@
 # Your Names
-# 1)
-# 2)
+# 1) Kim Allen
+# 2) Rosslyn  Sinclair-Chin
 
-# We spent [#] hours on this challenge.
+# We spent 1.5 hours on this challenge.
 
 # Bakery Serving Size portion calculator.
 
