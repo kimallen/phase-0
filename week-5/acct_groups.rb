@@ -64,32 +64,70 @@ def num_groups (list_of_names)
 end
 
 num_groups (student_list)
-total_groups = num_groups (student_list)
-remainder = student_list.length % 5
-number_of_4_people_groups = 5 - remainder
 
+def create_groups(student_list, total_groups)  
+  remainder = student_list.length % 5
+  number_of_4_people_groups = 5 - remainder
   all_groups = Array.new(total_groups)
   index = 0
-  	all_groups.each do |group|
-      index+=1
-      if index <= number_of_4_people_groups
-        group = student_list.pop(4)
-      else group = student_list.pop(5)
-      end
+  all_groups.each do |group|
+    index+=1
+    if index <= number_of_4_people_groups
+      group = student_list.pop(4)
+    else group = student_list.pop(5)
+    end
      all_groups[index-1]= group
-  	end
-  	p all_groups[2][3]
+  end
+end
 
-  	What was the most interesting and most difficult part of this challenge?
-  	Most interesting: Refactoring because it was the first time I was able to do it on my own.  
-  		The most difficult is that it took me FOREVER and it seemed there were a number of different ways to approach it.  I spent the first 5 hours trying to do it one way, and then switched strategies.
-Do you feel you are improving in your ability to write pseudocode and break the problem down?
-Somewhat.  I still feel like I have a long way to go.  I feel like I go a lot of round-about ways to get to where I want to go.
-Was your approach for automating this task a good solution? What could have made it even better?
-Well, it's a task I could have done way faster with a list and pen and paper.  It could be better if I somehow randomized the list.
-What data structure did you decide to store the accountability groups in and why?
-I stored it in an array.  I decided to use the indices to calculate and didn't find a reason to use a hash.  Hashes are also more intimidating to me.
-What did you learn in the process of refactoring your initial solution? Did you learn any new Ruby methods?
-I used .pop for the first time.  I learned another way to do what I'd already done.  
-I also realized my solution was an array inside an array inside an array. In refactoring I realized that that what is popped off is already an array.
+total_groups = num_groups (student_list)
+p create_groups(student_list, total_groups)
+
+#can't figure out why the below won't work (I use different argument names)
+=begin
+def create_groups(list_of_names, total_num_groups)  
+  remainder = list_of_names.length % 5
+  number_of_4_people_groups = 5 - remainder
+  all_groups = Array.new(total_num_groups)
+  index = 0
+  all_groups.each do |group|
+    index+=1
+    if index <= number_of_4_people_groups
+      group = list_of_names.pop(4)
+    else group = list_of_names.pop(5)
+    end
+     all_groups[index-1]= group
+  end
+end
+total_groups = num_groups (student_list)
+p create_groups (student_list, total_groups)
+=end
+
+  # all_groups = Array.new(total_groups)
+  # index = 0
+  # 	all_groups.each do |group|
+  #     index+=1
+  #     if index <= number_of_4_people_groups
+  #       group = student_list.pop(4)
+  #     else group = student_list.pop(5)
+  #     end
+  #    all_groups[index-1]= group
+  # 	end
+  # 	p all_groups[2][3]
+
+#   	What was the most interesting and most difficult part of this challenge?
+#   	Most interesting: Refactoring because it was the first time I was able to do it on my own.  
+#   		The most difficult is that it took me FOREVER and it seemed there were a number of different ways to approach it.  I spent the first 5 hours trying to do it one way, and then switched strategies.
+
+# Do you feel you are improving in your ability to write pseudocode and break the problem down?
+# Somewhat.  I still feel like I have a long way to go.  I feel like I go a lot of round-about ways to get to where I want to go.
+# Was your approach for automating this task a good solution? What could have made it even better?
+# Well, it's a task I could have done way faster with a list and pen and paper.  It could be better if I somehow randomized the list.
+
+# What data structure did you decide to store the accountability groups in and why?
+# I stored it in an array.  I decided to use the indices to calculate and didn't find a reason to use a hash.  Hashes are also more intimidating to me.
+
+# What did you learn in the process of refactoring your initial solution? Did you learn any new Ruby methods?
+# I used .pop for the first time.  I learned another way to do what I'd already done.  
+# I also realized my solution was an array inside an array inside an array. In refactoring I realized that that what is popped off is already an array.
 
