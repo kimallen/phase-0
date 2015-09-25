@@ -1,6 +1,6 @@
 # Calculate the mode Pairing Challenge
 
-# I worked on this challenge [by myself, with: ]
+# I worked on this challenge with Nathan Liu
 
 # I spent [] hours on this challenge.
 
