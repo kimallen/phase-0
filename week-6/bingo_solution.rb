@@ -16,8 +16,8 @@
      # create a method check_pick
     # reminder: board[row][column]  
     # 
-    Iterate through each row.  Within each row, iterate through each item, or column, 
-    and if it matches the position and the number picked, make it into an 'X'.
+    # Iterate through each row.  Within each row, iterate through each item, or column, 
+    # and if it matches the position and the number picked, make it into an 'X'.
     
 # If the number is in the column, replace with an 'x'
      # use a destructive method to iterate through the items in the column and replace the number called with an "x"
@@ -29,6 +29,7 @@
     # PUTS the board with line breaks after each row
 # Initial Solution
 
+=begin
 class BingoBoard
 
   def initialize(board)
@@ -68,23 +69,29 @@ class BingoBoard
     end
   end
 end
-
+=end
 # Refactored Solution
-# I don't know what else to do.
+# I don't know what else I could use to refactor.
 
 
-#DRIVER CODE (I.E. METHOD CALLS) GO BELOW THIS LINE
-board = [[47, 44, 71, 8, 88],
-        [22, 69, 75, 65, 73],
-        [83, 85, 97, 89, 57],
-        [25, 31, 96, 68, 51],
-        [75, 70, 54, 80, 83]]
-
-new_game = BingoBoard.new(board)
-new_game.pick
-new_game.check_pick
-new_game.display_column
-new_game.display_altered_board
+# How difficult was pseudocoding this challenge? What do you think of your pseudocoding style?
+#   It was a little more challenging.  I actually rewrote part of it after I made my solution.  
+#   I was going to go about it one way, but it turnede out it didn't work.
+# What are the benefits of using a class for this challenge?
+# You can play with more than one board, yet use the same class to evaluate and change the board.
+# It also allows you to display different parts of the board by applying methods created in the class.
+# How can you access coordinates in a nested array?
+# iterate through the 1st level array, then within that iteration, iterate through the next array.
+# What methods did you use to access and modify the array?
+# I used map! and each.  I used map! for both iterations, and then experimented with map!, map, 
+# and each to see what was necessary.  To be safe I would use map! all around, though I'm not sure what is proper.
+# How did you determine what should be an instance variable versus a local variable?
+# Any variable I was going to use in another method in the class I made an instance variable.  
+# If I was only using it within a method, I would use a local variable.  I didn't actually use any, but I could have on pick.  
+# I just figured I'd make it an instance variable in case I wanted to call it elsewhere for some reason.
+# What do you feel is most improved in your refactored solution?
+#   I unfortunately really can't think of a refactoring.  I'd love some ideas.  I haven't quite figured out how to work out 
+# a refactor.  There may be a way to display it using next_values, but I couldn't figure it out.
 
 
 #Reflection
