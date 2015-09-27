@@ -70,8 +70,58 @@ class BingoBoard
   end
 end
 =end
+
 # Refactored Solution
-# I don't know what else I could use to refactor.
+# The only change is on line 95
+class BingoBoard
+
+  def initialize(board)
+    @bingo_board = board
+  end
+  
+  def pick
+    @letters = ['B', 'I', 'N', 'G', 'O']
+    @letter_picked = @letters[rand(5)]
+    @number_picked = rand(1..100)
+    @pick = @letter_picked + @number_picked.to_s
+    puts "Your letter-number combo is #{@pick}"
+  end
+  
+  def check_pick
+    @letter_column = @letters.index(@letter_picked) 
+    @bingo_board.each do |row|
+      row.map! do |coordinate|
+        # This is the only refactor below
+        ((row.index(coordinate) == @letter_column) && (coordinate == @number_picked)) ? 'X' : coordinate 
+      end
+    end
+  end
+  
+  def display_column
+      puts "The #{@letter_picked} column looks like this:"
+      @bingo_board.each {|row| p row[@letter_column]}
+  end
+  
+  def display_altered_board
+    puts "The updated pretty board looks like this:"
+    @bingo_board.each do|row| puts 
+      row.each {|coordinate| print "#{coordinate} "}
+    end
+  end
+end
+
+# DRIVER CODE:
+board = [[47, 44, 71, 8, 88],
+        [22, 69, 75, 65, 73],
+        [83, 85, 97, 89, 57],
+        [25, 31, 96, 68, 51],
+        [75, 70, 54, 80, 83]]
+
+new_game = BingoBoard.new(board)
+new_game.pick
+new_game.check_pick
+new_game.display_column
+new_game.display_altered_board
 
 
 # How difficult was pseudocoding this challenge? What do you think of your pseudocoding style?
@@ -90,7 +140,8 @@ end
 # If I was only using it within a method, I would use a local variable.  I didn't actually use any, but I could have on pick.  
 # I just figured I'd make it an instance variable in case I wanted to call it elsewhere for some reason.
 # What do you feel is most improved in your refactored solution?
-#   I unfortunately really can't think of a refactoring.  I'd love some ideas.  I haven't quite figured out how to work out 
+#   My only refactor is to use a ternary operator.  I'm not sure that it actually makes it more readable. 
+# I'd love some ideas.  I haven't quite figured out how to work out 
 # a refactor.  There may be a way to display it using next_values, but I couldn't figure it out.
 
 
