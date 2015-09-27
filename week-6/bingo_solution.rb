@@ -1,6 +1,6 @@
 # A Nested Array to Model a Bingo Board SOLO CHALLENGE
 
-# I spent [#] hours on this challenge.
+# I spent 3.5 hours on this challenge.
 
 
 # Release 0: Pseudocode
@@ -9,27 +9,24 @@
 # Output: the modified board displayed prettily to the console
 
 # Create a method to generate a letter ( b, i, n, g, o) and a number (1-100)
-  #fill in the outline here
-    #randomly choose from the array [b, i , n, g, o] "letters" as array, column_picked as element called
+     #randomly choose from the array [b, i , n, g, o] "letters" as array, column_picked as element called
     # randomly choose a number 1-100 (num_picked)
 
 # Check the called column for the number called.
-  #fill in the outline here
-    # create a method check_pick
-    # board[row][column]  
-    # For a specific column, iterate through each row to see if the num_picked is equal to the number in that position
-    # Use map!{|row|IF num_picked = board[row][column-picked] board[row][column_picked]
+     # create a method check_pick
+    # reminder: board[row][column]  
+    # 
+    Iterate through each row.  Within each row, iterate through each item, or column, 
+    and if it matches the position and the number picked, make it into an 'X'.
+    
 # If the number is in the column, replace with an 'x'
-  #fill in the outline here
-   # use a destructive method to iterate through the items in the column and replace the number called with an "x"
+     # use a destructive method to iterate through the items in the column and replace the number called with an "x"
 
 # Display a column to the console
-  #fill in the outline here
-# return and print the list of items in that column
+ # return and print the list of items in that column
   # do this by iterating through and PUTS each item in the column
 # Display the board to the console (prettily)
-  #fill in the outline here
-  # PUTS the board with line breaks after each row
+    # PUTS the board with line breaks after each row
 # Initial Solution
 
 class BingoBoard
