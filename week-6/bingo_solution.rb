@@ -47,25 +47,25 @@ class BingoBoard
   end
   
   def check_pick
-    p @bingo_board
-    @column = @letters.index(@letter_picked) 
-    @bingo_board.map! do |row|
+    # p @bingo_board
+    @letter_column = @letters.index(@letter_picked) 
+    @bingo_board.each do |row|
       row.map! do |coordinate|
-        if (row.index(coordinate) == @column) && (coordinate == @number_picked)
+        if (row.index(coordinate) == @letter_column) && (coordinate == @number_picked)
           'X'
         else coordinate
         end
       end
-      # p row
     end
-    # p @bingo_board
   end
   
   def display_column
-      @bingo_board.each {|row| p row[@column]}
+      puts "The #{@letter_picked} column looks like this:"
+      @bingo_board.each {|row| p row[@letter_column]}
   end
   
   def display_altered_board
+    puts "The updated pretty board looks like this:"
     @bingo_board.each do|row| puts 
       row.each {|coordinate| print "#{coordinate} "}
     end
@@ -73,7 +73,7 @@ class BingoBoard
 end
 
 # Refactored Solution
-
+# I don't know what else to do.
 
 
 #DRIVER CODE (I.E. METHOD CALLS) GO BELOW THIS LINE
