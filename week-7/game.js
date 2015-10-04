@@ -59,134 +59,117 @@ var flora = [
 plantsLeft: 3,
 available: true,
 poisonous: true,
-funFact: "This plant is related to the carrot.  Socrates was killed by this plant."},
+funFact: "This plant is related to the carrot.  Socrates had a relationship with this plant."},
 {name: "soaproot",
-plantsLeft: 3,
+plantsLeft: 1,
 available: true,
 poisonous: false,
-funFact: "The root of this plant can be used as a brush, soap, stunning fish, or food."},
+funFact: "The root of this plant can be used as a brush, soap, stunning fish."},
 {name: "poison oak",
 plantsLeft: 3,
 available: true,
 poisonous: true,
-funFact: "Deer like to nibble on the leaves and eat the red berries.  If you eat it, it will make your throat itch and swell."},
+funFact: "Deer like to nibble on the leaves and eat the red berries."},
 {name: "miner's lettuce",
-plantsLeft: 3,
+plantsLeft: 2,
 available: true,
 poisonous: false,
-funFact: "The young leaves look like hearts and the older leaves are circles.  The stems, leaves, and flowers are edible."},
+funFact: "The young leaves look like hearts and the older leaves are circles."},
 {name: "manzanita",
-plantsLeft: 3,
+plantsLeft: 1,
 available: true,
 poisonous: false,
-funFact:"This native CA plant is drought tolerant and makes tangy red berries."}, /*whose seeds only germinate after fire exposure.??*/
+funFact:"This native CA plant is drought tolerant, has red bark and makes red berries."}, /*whose seeds only germinate after fire exposure.??*/
 {name: "chantarelle",
 available: true,
-plantsLeft: 3,
+plantsLeft: 1,
 poisonous: false,
-funFact: "This is not a plant but a delicious fungus that likes growing under live oaks and Douglas fir."}
+funFact: "This is not a plant but a fungus that likes growing under live oaks and Douglas fir."}
 ]
 
 //Gives game instructions to the user and gets their name and creates an object Player
 
 function begin(){
-	// alert("Welcome to FORAGE.  You are lost in the forest, don't know your plants, and need to eat.  You will encounter plants and must choose whether to eat them or to pass.  Be aware that some are poisonous and will kill you.  But if you don't eat, you will die of starvation.  If you eat enough, you will survive long enough to be found.  If your nourishment level reaches 10, you survive.  If your nourishment level reaches 0, you will die.  Your current level is 5.");
+	alert("Welcome to FORAGE.  You are lost in the forest, don't know your plants, and need to eat.  You will encounter plants and must choose whether to eat them or to pass.  Be aware that some are poisonous and will kill you.  But if you don't eat, you will die of starvation.  If you eat enough, you will survive long enough to be found.  If your nourishment level reaches 10, you survive.  If your nourishment level reaches 0, you will die.  Your current level is 5.");
 	// var playerName = prompt("What is your first name?");
 	var player = new Object(); //put this outside of begin?
 	// player.firstName = playerName;
 	player.energyLevel = 5;
 	var removedPlants = [];
-	//Randomly chooses a plant from the array and removes plants from array whose value equals 0.
+	var randomPlant = {}
+	var randomPlantIndex;
+	mysteryPlant();
+	// choicePoint();
+		//Randomly chooses a plant from the array and removes plants from array whose value equals 0.
+	
+
 	function mysteryPlant(){
-		var randomPlantIndex = Math.floor(Math.random() * (flora.length));
-		var randomPlant = flora[randomPlantIndex];
-		if (randomPlant.plantsLeft === 0){
-			removedPlants.push((flora.splice(randomPlantIndex, 1))[0]);
-		}
+		remaining();
+		randomPlantIndex = Math.floor(Math.random() * (flora.length));
+		randomPlant = flora[randomPlantIndex];
+		console.log (randomPlant);
+		
 	// 		//put choicePoint() in here after testing.
-
+		choicePoint();
 	}//closes mysteryPlant
-
+//removes the plant from array flora and is added to the removedPlants array.
+	function remaining(){
+		if (randomPlant.plantsLeft === 0){
+				randomPlant.available = false;
+				removedPlants.push((flora.splice(randomPlantIndex, 1))[0]);
+				console.log(flora);
+				console.log(removedPlants);
+		}
+	}
 //Lets the user choose whether to eat a plant or not and evaluates their choice based on the properties of the plant. Put inside of mysteryPlant?
 function choicePoint(){
-		var choice = "eat";
-		// var choice = prompt("You are still hungry and encountered an attractive plant.  You have two choices: eat it, or leave it.  Be careful, it could be poisonous.  Please choose 'eat' or 'leave'");
+		var choice = prompt("You are still hungry and encountered an attractive plant. " + randomPlant.funFact + "  You have two choices: eat it, or leave it.  Be careful, it could be poisonous.  Please choose 'eat' or 'leave.'");
 		if (choice === "eat" && randomPlant.poisonous == true){
-			console.log("You just ate " + randomPlant.name + ". " + randomPlant.funFact + " It is poisonous.  You are dead.  Game over.");}
+			alert("You just ate " + randomPlant.name + ". " + randomPlant.funFact + " It is poisonous.  You are dead.  Game over.");
+			return;
+		}
 		else if (choice === "eat"){
-			player.energyLevel += 2; console.log(player.energyLevel)
+			player.energyLevel += 2;
 			randomPlant.plantsLeft -= 1;
-			alert("You just ate " + randomPlant.name + ". " + randomPlant.funFact + " There's " + randomPlant.plantsLeft + " " +randomPlant.name + " remaining and your energy level is now " + player.energyLevel + ".");}
+
+			alert("You just ate " + randomPlant.name + ". " + randomPlant.funFact + " There's " + randomPlant.plantsLeft + " " + randomPlant.name + " remaining and your energy level is now " + player.energyLevel + ". You're goal is 10.");
+		}
 		else if(choice === "leave"){
-			player.energyLevel -= 1;
-			console.log("Say goodbye to this plant then.  Your current energy level is " + player.energyLevel + ".");
-			}
+			player.energyLevel -= 2;
+			alert("You have chosen to move on.  Your current energy level is " + player.energyLevel + ".");
+		}
 		else {
-			console.log("That's not one of the options.  Try again.");}
-			// choicePoint();} //don't know how to loop back 
+			alert("That's not one of the options.  Try again.");
+			choicePoint();
+		}  
 		survival();
-	}//closes function
-	// }
+		
+}//closes function
+
 //Checks if the player has reached the game-ending survival level or starvation level.
 
 	function survival(){
 		if(player.energyLevel >= 10){
-			console.log ("Congratulations!  You ate enough and raised your energy level to survive the week.  You win!");
+			alert("Congratulations!  You ate enough and raised your energy level to survive the week.  You win!");
+			return;
 		}
 		else if (player.energyLevel <= 0){
-			console.log ("You are too depleted.  You starve.  You're done for. Game over.")
+			alert("You are too depleted.  You starve.  You're done for. Game over.");
+			return;
 		}
+		else mysteryPlant();
 	}
 
-} //temporarily closes begin
+} //closes begin
 
 begin()
 
 
-
-
-// function choicePoint(){
-// 	var choice = prompt("You are still hungry and encountered an attractive plant.  You have two choices: eat it, or leave it.  Be careful, it could be poisonous.  Please choose 'eat' or 'leave'");
-// 	if (choice === "eat" && randomPlant.poisonous == true){
-// 		return ("You just ate " + randomPlant.name + ". " + randomPlant.funFact + " It is poisonous.  You are dead.  Game over.");}
-// 	else if (choice === "eat"){
-// 		player.energyLevel += 2;
-// 		randomPlant.plantsLeft -= 1;
-// 		alert("You just ate " + randomPlant.name + ". " + randomPlant.funFact + "There's " + randomPlant.plantsLeft + " and your energy level is now " + player.energyLevel);}
-// 	else if(choice === leave){
-// 		player.energyLevel -= 1;
-// 		alert("Say goodbye to this plant then.  Your current energy level is " + player.energyLevel);
-// 		}
-// 	else {
-// 		alert("That's not one of the options.  Try again.");
-// 		choicePoint();}
-// 	survival();
-// }//closes function
-
-// //Checks if the player has reached the game-ending survival level or starvation level.
-
-// function survival(){
-// 	if(energyLevel >= 10){
-// 		return ("Congratulations!  You ate enough and raised your energy level to survive the week.  You win!");
-// 	}
-// 	else if (energyLevel <= 0){
-// 		return ("You are too depleted.  You starve.  You're done for. Game over.")
-// 	}
-// }
-
-//Sends the player back to another mysteryPlant.
-//mysteryPlant();
-
-// } //closes begin
 
 
 // Refactored Code
-
-
-
-
-//Driver Code:
-begin()
+// about 15 hours to get this runnning- I just can't spend any more time on it this week.  Would love to add more
+// to the library of plants and to add more features.
 
 
 
