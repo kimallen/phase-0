@@ -172,7 +172,14 @@ begin()
 // to the library of plants and to add more features.
 
 
-
+// What was the most difficult part of this challenge?
+// The most difficult was that I had to do a lot of research to try to understand what objects are and how to utilize them.  I at first translated them to hashes in Ruby, but it seems that they are more the basis of how to maneauver in JS.  I'm still trying to wrap my head around it.  I knew I needed to grasp it better before even starting to write my pseudocode, so it took a lot of time just leading up to the coding.
+// What did you learn about creating objects and functions that interact with one another?
+// I'm not so sure I even adequately made them interact, since none of them call parameters.  I definitely am manipulating objects, but I used alert and prompt commands.  I couldn't see how a person could play without giving input during the program.
+// Did you learn about any new built-in methods you could use in your refactored solution? If so, what were they and how do they work?
+// I spent 15 hours working on the code, plus probably another five trying to do research to be able to write it, so I really could not spend any more time in trying to refactor it.  I wish I could because I'd like to learn more.
+// How can you access and manipulate properties of objects?
+// I accessed properties using dot notation, which made it really easy.  I both added and changed properties with this technique.  I did not utilize parameters because i didn't know how to interact with the user and then run the program and then run it again.  I had to do it all in one run of the program.
 
 
 
