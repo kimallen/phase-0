@@ -96,13 +96,14 @@ class Pez_dispenser
 end
 
 
+
 # DRIVER CODE:
 
 pez_dispenser = Pez_dispenser.new(['strawberry', 'orange', 'grape', 'cherry', 'lemon'])
 p pez_dispenser
 p pez_dispenser.count_pez
 pez_dispenser.take_pez
-p pez_dispenser.add_pez('watermelon')
+p pez_dispenser.add_pez('blueberry')
 pez_dispenser.show_pez
 p pez_dispenser.count_pez
 
