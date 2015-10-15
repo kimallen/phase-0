@@ -1,7 +1,7 @@
 # PezDispenser Class from User Stories
 
-# I worked on this challenge [by myself, with: ].
-# I spent [#] hours on this challenge.
+# I worked on this challenge [by myself.
+# I spent 2 hours on this challenge.
 
 
 # 1. Review the following user stories:
