@@ -107,8 +107,14 @@ p pez_dispenser.add_pez('blueberry')
 pez_dispenser.show_pez
 p pez_dispenser.count_pez
 
-
-
+# Reflection: 
+# What concepts did you review in this challenge?
+# Using a class, using instance variables, calling variables.
+# What is still confusing to you about Ruby?
+# I haven't totally figured out when to use attributes.  I used them at first for this challenge, but then I tried commenting them out and it
+# worked fine, so apparently I didn't need them.
+# What are you going to study to get more prepared for Phase 1?
+# Study attributes and when to use them.  Review past challenges and try to understand parts that were vague or that I never understood.
 
 
 
